@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+  </head>
+  <body>
+    {% include "navbar.html" %}
+
+
+<center>
+  <br>
+  <br>
+  <br>
+  
+  <h1>LOGIN TO YOUR ACCOUNT</h1>
+  {% if msg %}
+  <b style="color:red">{{msg}}</b>
+{% endif %}
+<form method="post" action="{% url 'login' %}">
+  {% csrf_token %}
+  <table>
+    <tr>
+      <td>Email</td>
+      <td><input type="email" name="email"></td>
+    </tr>
+    <tr>
+      <td>Password</td>
+      <td><input type="password" name="password"></td>
+    </tr>
+    <tr>
+      <td><input type="submit" name="action" value="Login" class="btn btn-primary"></td>
+      <td>
+        <a href="#"><input type="button" name="action" value="Forgot Password" class="btn btn-info"></a>
+      </td>
+    </tr>
+  </table>
+</center><!--end log form -->
+
+
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br>
+
+  </body>
+</html>
